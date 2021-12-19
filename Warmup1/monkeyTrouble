@@ -15,3 +15,15 @@ monkeyTrouble(true, true) → true	true	OK
 monkeyTrouble(false, false) → true	true	OK	
 monkeyTrouble(true, false) → false	false	OK	
 monkeyTrouble(false, true) → false	false	OK	
+
+Expected	Run		
+sumDouble(1, 2) → 3	3	OK	
+sumDouble(3, 2) → 5	5	OK	
+sumDouble(2, 2) → 8	8	OK	
+sumDouble(-1, 0) → -1	-1	OK	
+sumDouble(3, 3) → 12	12	OK	
+sumDouble(0, 0) → 0	0	OK	
+sumDouble(0, 1) → 1	1	OK	
+sumDouble(3, 4) → 7	7	OK	
+
+All Correct
