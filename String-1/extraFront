@@ -1,0 +1,27 @@
+Given a string, return a new string made of 3 copies of the first 2 chars of the original string. The string may be any length. If there are fewer than 2 chars, use whatever is there.
+
+
+extraFront("Hello") → "HeHeHe"
+extraFront("ab") → "ababab"
+extraFront("H") → "HHH"
+
+public String extraFront(String str) {
+  if(str.length() < 2) return (str+str+str);
+  
+  String frontStr = str.substring(0,2);
+  
+  return frontStr+frontStr+frontStr;
+}
+
+
+Expected	Run		
+extraFront("Hello") → "HeHeHe"	"HeHeHe"	OK	
+extraFront("ab") → "ababab"	"ababab"	OK	
+extraFront("H") → "HHH"	"HHH"	OK	
+extraFront("") → ""	""	OK	
+extraFront("Candy") → "CaCaCa"	"CaCaCa"	OK	
+extraFront("Code") → "CoCoCo"	"CoCoCo"	OK	
+other tests
+OK	
+
+All Correct
