@@ -1,0 +1,27 @@
+
+Given a string, return a new string made of 3 copies of the last 2 chars of the original string. The string length will be at least 2.
+
+
+extraEnd("Hello") → "lololo"
+extraEnd("ab") → "ababab"
+extraEnd("Hi") → "HiHiHi"
+
+public String extraEnd(String str) {
+  StringBuilder newStr = new StringBuilder();
+  String backString = str.substring(str.length()-2, str.length());
+  
+  for(int i = 0; i < 3; i++){
+    newStr.append(backString);
+  }
+  
+  return newStr.toString();
+}
+
+Expected	Run		
+extraEnd("Hello") → "lololo"	"lololo"	OK	
+extraEnd("ab") → "ababab"	"ababab"	OK	
+extraEnd("Hi") → "HiHiHi"	"HiHiHi"	OK	
+extraEnd("Candy") → "dydydy"	"dydydy"	OK	
+extraEnd("Code") → "dedede"	"dedede"	OK	
+other tests
+OK	
