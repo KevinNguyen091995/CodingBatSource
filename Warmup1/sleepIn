@@ -9,3 +9,9 @@ sleepIn(false, true) → true
 public boolean sleepIn(boolean weekday, boolean vacation) {
   return(vacation || !weekday);
 }
+
+Expected	Run		
+sleepIn(false, false) → true	true	OK	
+sleepIn(true, false) → false	false	OK	
+sleepIn(false, true) → true	true	OK	
+sleepIn(true, true) → true	true	OK	
