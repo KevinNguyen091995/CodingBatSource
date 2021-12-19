@@ -1,0 +1,25 @@
+Given a string, return a string length 2 made of its first 2 chars. If the string length is less than 2, use '@' for the missing chars.
+
+atFirst("hello") → "he"
+atFirst("hi") → "hi"
+atFirst("h") → "h@"
+
+public String atFirst(String str) {
+  if(str.length() == 1) return (str + "@");
+  if(str.length() > 1) return (str.substring(0,2));
+  
+  return "@@";
+}
+
+Expected	Run		
+atFirst("hello") → "he"	"he"	OK	
+atFirst("hi") → "hi"	"hi"	OK	
+atFirst("h") → "h@"	"h@"	OK	
+atFirst("") → "@@"	"@@"	OK	
+atFirst("kitten") → "ki"	"ki"	OK	
+atFirst("java") → "ja"	"ja"	OK	
+atFirst("j") → "j@"	"j@"	OK	
+other tests
+OK	
+
+All Correct
