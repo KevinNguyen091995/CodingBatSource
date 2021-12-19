@@ -1,0 +1,37 @@
+Given a string, if the first or last chars are 'x', return the string without those 'x' chars, and otherwise return the string unchanged.
+
+
+withoutX("xHix") → "Hi"
+withoutX("xHi") → "Hi"
+withoutX("Hxix") → "Hxi"
+
+public String withoutX(String str) {
+  StringBuilder newStr = new StringBuilder();
+  
+  for(int i = 0; i < str.length(); i++){
+    if(i == 0 && str.charAt(i) == 'x' || i == str.length()-1 && str.charAt(i) == 'x'){
+      continue;
+    }
+    else newStr.append(str.charAt(i));
+  }
+  
+  return newStr.toString();
+}
+
+Expected	Run		
+withoutX("xHix") → "Hi"	"Hi"	OK	
+withoutX("xHi") → "Hi"	"Hi"	OK	
+withoutX("Hxix") → "Hxi"	"Hxi"	OK	
+withoutX("Hi") → "Hi"	"Hi"	OK	
+withoutX("xxHi") → "xHi"	"xHi"	OK	
+withoutX("Hix") → "Hi"	"Hi"	OK	
+withoutX("xaxbx") → "axb"	"axb"	OK	
+withoutX("xx") → ""	""	OK	
+withoutX("x") → ""	""	OK	
+withoutX("") → ""	""	OK	
+withoutX("Hello") → "Hello"	"Hello"	OK	
+withoutX("Hexllo") → "Hexllo"	"Hexllo"	OK	
+other tests
+OK	
+
+All Correct
