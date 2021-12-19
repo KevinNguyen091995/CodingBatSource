@@ -1,0 +1,33 @@
+Given two strings, append them together (known as "concatenation") and return the result. However, if the strings are different lengths, omit chars from the longer string so it is the same length as the shorter string. So "Hello" and "Hi" yield "loHi". The strings may be any length.
+
+
+minCat("Hello", "Hi") → "loHi"
+minCat("Hello", "java") → "ellojava"
+minCat("java", "Hello") → "javaello"
+
+public String minCat(String a, String b) {
+  StringBuilder newStr = new StringBuilder();
+  
+  if(a.length() > b.length()){
+    newStr.append(a.substring(a.length()-b.length(),a.length()) + b);
+  }
+  
+  if(b.length() > a.length()){
+    newStr.append(a + b.substring(b.length()-a.length(),b.length()));
+  }
+  
+  return newStr.toString();
+}
+
+
+Expected	Run		
+minCat("Hello", "Hi") → "loHi"	"loHi"	OK	
+minCat("Hello", "java") → "ellojava"	"ellojava"	OK	
+minCat("java", "Hello") → "javaello"	"javaello"	OK	
+minCat("abc", "x") → "cx"	"cx"	OK	
+minCat("x", "abc") → "xc"	"xc"	OK	
+minCat("abc", "") → ""	""	OK	
+other tests
+OK	
+
+All Correct
