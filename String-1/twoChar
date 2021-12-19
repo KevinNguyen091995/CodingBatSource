@@ -1,0 +1,33 @@
+Given a string and an index, return a string length 2 starting at the given index. If the index is too big or too small to define a string length 2, use the first 2 chars. The string length will be at least 2.
+
+
+twoChar("java", 0) → "ja"
+twoChar("java", 2) → "va"
+twoChar("java", 3) → "ja"
+
+public String twoChar(String str, int index) {
+  if(index < str.length()-1 && index > 0) return(str.substring(index,index+2));
+  
+  return(str.substring(0,2));
+}
+
+Expected	Run		
+twoChar("java", 0) → "ja"	"ja"	OK	
+twoChar("java", 2) → "va"	"va"	OK	
+twoChar("java", 3) → "ja"	"ja"	OK	
+twoChar("java", 4) → "ja"	"ja"	OK	
+twoChar("java", -1) → "ja"	"ja"	OK	
+twoChar("Hello", 0) → "He"	"He"	OK	
+twoChar("Hello", 1) → "el"	"el"	OK	
+twoChar("Hello", 99) → "He"	"He"	OK	
+twoChar("Hello", 3) → "lo"	"lo"	OK	
+twoChar("Hello", 4) → "He"	"He"	OK	
+twoChar("Hello", 5) → "He"	"He"	OK	
+twoChar("Hello", -7) → "He"	"He"	OK	
+twoChar("Hello", 6) → "He"	"He"	OK	
+twoChar("Hello", -1) → "He"	"He"	OK	
+twoChar("yay", 0) → "ya"	"ya"	OK	
+other tests
+OK	
+
+All Correct
