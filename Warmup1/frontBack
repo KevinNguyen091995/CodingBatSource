@@ -13,3 +13,15 @@ public String frontBack(String str) {
   
   return str;
 }
+
+Expected	Run		
+frontBack("code") → "eodc"	"eodc"	OK	
+frontBack("a") → "a"	"a"	OK	
+frontBack("ab") → "ba"	"ba"	OK	
+frontBack("abc") → "cba"	"cba"	OK	
+frontBack("") → ""	""	OK	
+frontBack("Chocolate") → "ehocolatC"	"ehocolatC"	OK	
+frontBack("aavJ") → "Java"	"Java"	OK	
+frontBack("hello") → "oellh"	"oellh"	OK	
+
+All Correct
