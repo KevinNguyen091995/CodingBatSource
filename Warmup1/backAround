@@ -13,3 +13,13 @@ public String backAround(String str) {
   
   return newStr.toString();
 }
+
+Expected	Run		
+backAround("cat") → "tcatt"	"tcatt"	OK	
+backAround("Hello") → "oHelloo"	"oHelloo"	OK	
+backAround("a") → "aaa"	"aaa"	OK	
+backAround("abc") → "cabcc"	"cabcc"	OK	
+backAround("read") → "dreadd"	"dreadd"	OK	
+backAround("boo") → "obooo"	"obooo"	OK	
+
+All Correct
