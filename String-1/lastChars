@@ -1,0 +1,30 @@
+Given 2 strings, a and b, return a new string made of the first char of a and the last char of b, so "yo" and "java" yields "ya". If either string is length 0, use '@' for its missing char.
+
+
+lastChars("last", "chars") → "ls"
+lastChars("yo", "java") → "ya"
+lastChars("hi", "") → "h@"
+
+public String lastChars(String a, String b) {
+  if(a.length() > 0 && b.length() > 0) return(Character.toString(a.charAt(0)) + Character.toString(b.charAt(b.length()-1)));
+  if(a.length() < 1 && b.length() > 0) return("@"+Character.toString(b.charAt(b.length()-1)));
+  if(b.length() < 1 && a.length() > 0) return(Character.toString(a.charAt(0)) + "@");
+  
+  return "@@";
+}
+
+
+Expected	Run		
+lastChars("last", "chars") → "ls"	"ls"	OK	
+lastChars("yo", "java") → "ya"	"ya"	OK	
+lastChars("hi", "") → "h@"	"h@"	OK	
+lastChars("", "hello") → "@o"	"@o"	OK	
+lastChars("", "") → "@@"	"@@"	OK	
+lastChars("kitten", "hi") → "ki"	"ki"	OK	
+lastChars("k", "zip") → "kp"	"kp"	OK	
+lastChars("kitten", "") → "k@"	"k@"	OK	
+lastChars("kitten", "zip") → "kp"	"kp"	OK	
+other tests
+OK	
+
+All Correct
