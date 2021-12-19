@@ -1,0 +1,30 @@
+Given a string, if the string begins with "red" or "blue" return that color string, otherwise return the empty string.
+
+
+seeColor("redxx") → "red"
+seeColor("xxred") → ""
+seeColor("blueTimes") → "blue
+
+public String seeColor(String str) {
+  if(str.indexOf("red") == 0) return "red";
+  if(str.indexOf("blue") == 0) return "blue";
+  
+  return "";
+}
+
+Expected	Run		
+seeColor("redxx") → "red"	"red"	OK	
+seeColor("xxred") → ""	""	OK	
+seeColor("blueTimes") → "blue"	"blue"	OK	
+seeColor("NoColor") → ""	""	OK	
+seeColor("red") → "red"	"red"	OK	
+seeColor("re") → ""	""	OK	
+seeColor("blu") → ""	""	OK	
+seeColor("blue") → "blue"	"blue"	OK	
+seeColor("a") → ""	""	OK	
+seeColor("") → ""	""	OK	
+seeColor("xyzred") → ""	""	OK	
+other tests
+OK	
+
+All Correct
