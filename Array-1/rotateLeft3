@@ -1,0 +1,29 @@
+Given an array of ints length 3, return an array with the elements "rotated left" so {1, 2, 3} yields {2, 3, 1}.
+
+
+rotateLeft3([1, 2, 3]) → [2, 3, 1]
+rotateLeft3([5, 11, 9]) → [11, 9, 5]
+rotateLeft3([7, 0, 0]) → [0, 0, 7]
+
+public int[] rotateLeft3(int[] nums) {
+  int p1 = 0;
+  
+  for(int p2 = 1; p2 < nums.length; p2++){
+    int temp = nums[p1];
+    nums[p1++] = nums[p2];
+    nums[p2] = temp;
+  }
+  
+  return nums;
+}
+
+Expected	Run		
+rotateLeft3([1, 2, 3]) → [2, 3, 1]	[2, 3, 1]	OK	
+rotateLeft3([5, 11, 9]) → [11, 9, 5]	[11, 9, 5]	OK	
+rotateLeft3([7, 0, 0]) → [0, 0, 7]	[0, 0, 7]	OK	
+rotateLeft3([1, 2, 1]) → [2, 1, 1]	[2, 1, 1]	OK	
+rotateLeft3([0, 0, 1]) → [0, 1, 0]	[0, 1, 0]	OK	
+other tests
+OK	
+
+All Correct
