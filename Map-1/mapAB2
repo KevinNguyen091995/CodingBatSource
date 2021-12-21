@@ -1,0 +1,30 @@
+Modify and return the given map as follows: if the keys "a" and "b" are both in the map and have equal values, remove them both.
+
+
+mapAB2({"a": "aaa", "b": "aaa", "c": "cake"}) → {"c": "cake"}
+mapAB2({"a": "aaa", "b": "bbb"}) → {"a": "aaa", "b": "bbb"}
+mapAB2({"a": "aaa", "b": "bbb", "c": "aaa"}) → {"a": "aaa", "b": "bbb", "c": "aaa"}
+
+public Map<String, String> mapAB2(Map<String, String> map) {
+  if(map.containsKey("a") && map.containsKey("b") && map.get("a").equals(map.get("b"))){
+    map.remove("a");
+    map.remove("b");
+  }
+  
+  return map;
+}
+
+
+Expected	Run		
+mapAB2({"a": "aaa", "b": "aaa", "c": "cake"}) → {"c": "cake"}	{"c": "cake"}	OK	
+mapAB2({"a": "aaa", "b": "bbb"}) → {"a": "aaa", "b": "bbb"}	{"a": "aaa", "b": "bbb"}	OK	
+mapAB2({"a": "aaa", "b": "bbb", "c": "aaa"}) → {"a": "aaa", "b": "bbb", "c": "aaa"}	{"a": "aaa", "b": "bbb", "c": "aaa"}	OK	
+mapAB2({"a": "aaa"}) → {"a": "aaa"}	{"a": "aaa"}	OK	
+mapAB2({"b": "bbb"}) → {"b": "bbb"}	{"b": "bbb"}	OK	
+mapAB2({"a": "", "b": "", "c": "ccc"}) → {"c": "ccc"}	{"c": "ccc"}	OK	
+mapAB2({}) → {}	{}	OK	
+mapAB2({"a": "a", "b": "b", "z": "zebra"}) → {"a": "a", "b": "b", "z": "zebra"}	{"a": "a", "b": "b", "z": "zebra"}	OK	
+other tests
+OK	
+
+All Correct
