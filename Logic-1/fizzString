@@ -1,0 +1,43 @@
+Given a string str, if the string starts with "f" return "Fizz". If the string ends with "b" return "Buzz". If both the "f" and "b" conditions are true, return "FizzBuzz". In all other cases, return the string unchanged.
+
+
+fizzString("fig") → "Fizz"
+fizzString("dib") → "Buzz"
+fizzString("fib") → "FizzBuzz"
+
+public String fizzString(String str) {
+  StringBuilder newStr = new StringBuilder();
+  
+  boolean fizzCheck = str.substring(0,1).equals("f");
+  boolean buzzCheck = str.substring(str.length()-1, str.length()).equals("b");
+  
+  if(fizzCheck && buzzCheck) newStr.append("FizzBuzz");
+  else if(fizzCheck) newStr.append("Fizz");
+  else if(buzzCheck) newStr.append("Buzz");
+  else newStr.append(str);
+  
+  return newStr.toString();
+  
+}Expected	Run		
+fizzString("fig") → "Fizz"	"Fizz"	OK	
+fizzString("dib") → "Buzz"	"Buzz"	OK	
+fizzString("fib") → "FizzBuzz"	"FizzBuzz"	OK	
+fizzString("abc") → "abc"	"abc"	OK	
+fizzString("fooo") → "Fizz"	"Fizz"	OK	
+fizzString("booo") → "booo"	"booo"	OK	
+fizzString("ooob") → "Buzz"	"Buzz"	OK	
+fizzString("fooob") → "FizzBuzz"	"FizzBuzz"	OK	
+fizzString("f") → "Fizz"	"Fizz"	OK	
+fizzString("b") → "Buzz"	"Buzz"	OK	
+fizzString("abcb") → "Buzz"	"Buzz"	OK	
+fizzString("Hello") → "Hello"	"Hello"	OK	
+fizzString("Hellob") → "Buzz"	"Buzz"	OK	
+fizzString("af") → "af"	"af"	OK	
+fizzString("bf") → "bf"	"bf"	OK	
+fizzString("fb") → "FizzBuzz"	"FizzBuzz"	OK	
+other tests
+OK	
+
+All Correct
+
+
