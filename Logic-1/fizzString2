@@ -12,3 +12,26 @@ public String fizzString2(int n) {
   
   return n+"!";
 }
+
+Expected	Run		
+fizzString2(1) → "1!"	"1!"	OK	
+fizzString2(2) → "2!"	"2!"	OK	
+fizzString2(3) → "Fizz!"	"Fizz!"	OK	
+fizzString2(4) → "4!"	"4!"	OK	
+fizzString2(5) → "Buzz!"	"Buzz!"	OK	
+fizzString2(6) → "Fizz!"	"Fizz!"	OK	
+fizzString2(7) → "7!"	"7!"	OK	
+fizzString2(8) → "8!"	"8!"	OK	
+fizzString2(9) → "Fizz!"	"Fizz!"	OK	
+fizzString2(15) → "FizzBuzz!"	"FizzBuzz!"	OK	
+fizzString2(16) → "16!"	"16!"	OK	
+fizzString2(18) → "Fizz!"	"Fizz!"	OK	
+fizzString2(19) → "19!"	"19!"	OK	
+fizzString2(21) → "Fizz!"	"Fizz!"	OK	
+fizzString2(44) → "44!"	"44!"	OK	
+fizzString2(45) → "FizzBuzz!"	"FizzBuzz!"	OK	
+fizzString2(100) → "Buzz!"	"Buzz!"	OK	
+other tests
+OK	
+
+All Correct
