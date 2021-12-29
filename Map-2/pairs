@@ -1,0 +1,30 @@
+
+Given an array of non-empty strings, create and return a Map<String, String> as follows: for each string add its first character as a key with its last character as the value.
+
+
+pairs(["code", "bug"]) → {"b": "g", "c": "e"}
+pairs(["man", "moon", "main"]) → {"m": "n"}
+pairs(["man", "moon", "good", "night"]) → {"g": "d", "m": "n", "n": "t"}
+
+public Map<String, String> pairs(String[] strings) {
+  HashMap<String, String> newMap = new HashMap<>();
+  
+  for(int i = 0; i < strings.length; i++){
+    newMap.put(strings[i].substring(0,1), strings[i].substring(strings[i].length()-1, strings[i].length()));
+  }
+  return newMap;
+}
+
+
+Expected	Run		
+pairs(["code", "bug"]) → {"b": "g", "c": "e"}	{"b": "g", "c": "e"}	OK	
+pairs(["man", "moon", "main"]) → {"m": "n"}	{"m": "n"}	OK	
+pairs(["man", "moon", "good", "night"]) → {"g": "d", "m": "n", "n": "t"}	{"g": "d", "m": "n", "n": "t"}	OK	
+pairs([]) → {}	{}	OK	
+pairs(["a", "b"]) → {"a": "a", "b": "b"}	{"a": "a", "b": "b"}	OK	
+pairs(["are", "codes", "and", "cods"]) → {"a": "d", "c": "s"}	{"a": "d", "c": "s"}	OK	
+pairs(["apple", "banana", "tea", "coffee"]) → {"a": "e", "b": "a", "c": "e", "t": "a"}	{"a": "e", "b": "a", "c": "e", "t": "a"}	OK	
+other tests
+OK	
+
+All Correct
