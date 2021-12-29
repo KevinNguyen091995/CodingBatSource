@@ -1,0 +1,33 @@
+Given an array of non-empty strings, return a Map<String, String> with a key for every different first character seen, with the value of all the strings starting with that character appended together in the order they appear in the array.
+
+
+firstChar(["salt", "tea", "soda", "toast"]) → {"s": "saltsoda", "t": "teatoast"}
+firstChar(["aa", "bb", "cc", "aAA", "cCC", "d"]) → {"a": "aaaAA", "b": "bb", "c": "cccCC", "d": "d"}
+firstChar([]) → {}
+
+public Map<String, String> firstChar(String[] strings) {
+  HashMap<String, String> newMap = new HashMap<>();
+  
+  for(int i = 0; i < strings.length; i++){
+    if(!newMap.containsKey(strings[i].substring(0,1))){
+      newMap.put(strings[i].substring(0,1), "");
+    }
+  }
+  
+  for(int i = 0; i < strings.length; i++){
+    if(newMap.containsKey(strings[i].substring(0, 1))){
+      newMap.put(strings[i].substring(0,1), newMap.get(strings[i].substring(0,1)) + strings[i]);
+    }
+  }
+  
+  return newMap;
+}
+
+
+Expected	Run		
+firstChar(["salt", "tea", "soda", "toast"]) → {"s": "saltsoda", "t": "teatoast"}	{"s": "saltsoda", "t": "teatoast"}	OK	
+firstChar(["aa", "bb", "cc", "aAA", "cCC", "d"]) → {"a": "aaaAA", "b": "bb", "c": "cccCC", "d": "d"}	{"a": "aaaAA", "b": "bb", "c": "cccCC", "d": "d"}	OK	
+firstChar([]) → {}	{}	OK	
+firstChar(["apple", "bells", "salt", "aardvark", "bells", "sun", "zen", "bells"]) → {"a": "appleaardvark", "b": "bellsbellsbells", "s": "saltsun", "z": "zen"}	{"a": "appleaardvark", "b": "bellsbellsbells", "s": "saltsun", "z": "zen"}	OK	
+
+All Correct
