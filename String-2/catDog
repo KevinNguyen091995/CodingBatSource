@@ -1,0 +1,37 @@
+Return true if the string "cat" and "dog" appear the same number of times in the given string.
+
+
+catDog("catdog") → true
+catDog("catcat") → false
+catDog("1cat1cadodog") → true
+
+public boolean catDog(String str) {
+  int dogCount = 0;
+  int catCount = 0;
+  
+  for(int i = 0; i < str.length()-2; i++){
+    if(str.substring(i, i+3).equals("cat")) catCount++;
+    if(str.substring(i, i+3).equals("dog")) dogCount++;
+  }
+  
+  return (dogCount == catCount);
+}
+
+Expected	Run		
+catDog("catdog") → true	true	OK	
+catDog("catcat") → false	false	OK	
+catDog("1cat1cadodog") → true	true	OK	
+catDog("catxxdogxxxdog") → false	false	OK	
+catDog("catxdogxdogxcat") → true	true	OK	
+catDog("catxdogxdogxca") → false	false	OK	
+catDog("dogdogcat") → false	false	OK	
+catDog("dogogcat") → true	true	OK	
+catDog("dog") → false	false	OK	
+catDog("cat") → false	false	OK	
+catDog("ca") → true	true	OK	
+catDog("c") → true	true	OK	
+catDog("") → true	true	OK	
+other tests
+OK	
+
+All Correct
