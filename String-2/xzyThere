@@ -1,0 +1,38 @@
+Return true if the given string contains an appearance of "xyz" where the xyz is not directly preceeded by a period (.). So "xxyz" counts but "x.xyz" does not.
+
+
+xyzThere("abcxyz") → true
+xyzThere("abc.xyz") → false
+xyzThere("xyz.abc") → true
+
+public boolean xyzThere(String str) {
+  if(str.startsWith("xyz")) return true;
+  
+  for(int i = str.length(); i > 3; i--){
+    String check = str.substring(i-4,i);
+    if(check.equals(".xyz")) return false;
+    if(str.substring(i-3,i).equals("xyz")) return true;
+  }
+  
+  return false;
+}
+
+Expected	Run		
+xyzThere("abcxyz") → true	true	OK	
+xyzThere("abc.xyz") → false	false	OK	
+xyzThere("xyz.abc") → true	true	OK	
+xyzThere("abcxy") → false	false	OK	
+xyzThere("xyz") → true	true	OK	
+xyzThere("xy") → false	false	OK	
+xyzThere("x") → false	false	OK	
+xyzThere("") → false	false	OK	
+xyzThere("abc.xyzxyz") → true	true	OK	
+xyzThere("abc.xxyz") → true	true	OK	
+xyzThere(".xyz") → false	false	OK	
+xyzThere("12.xyz") → false	false	OK	
+xyzThere("12xyz") → true	true	OK	
+xyzThere("1.xyz.xyz2.xyz") → false	false	OK	
+other tests
+OK	
+
+All Correct
