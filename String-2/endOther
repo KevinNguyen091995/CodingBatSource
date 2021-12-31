@@ -1,0 +1,36 @@
+Given two strings, return true if either of the strings appears at the very end of the other string, ignoring upper/lower case differences (in other words, the computation should not be "case sensitive"). Note: str.toLowerCase() returns the lowercase version of a string.
+
+
+endOther("Hiabc", "abc") → true
+endOther("AbC", "HiaBc") → true
+endOther("abc", "abXabc") → true
+
+public boolean endOther(String a, String b) {
+  a = a.toLowerCase();
+  b = b.toLowerCase();
+  
+  if(b.length() >= a.length() && b.substring(b.length() - a.length(), b.length()).equals(a)) return true;
+  if(a.length() >= b.length() && a.substring(a.length() - b.length(), a.length()).equals(b)) return true;
+  
+  return false;
+}
+
+Expected	Run		
+endOther("Hiabc", "abc") → true	true	OK	
+endOther("AbC", "HiaBc") → true	true	OK	
+endOther("abc", "abXabc") → true	true	OK	
+endOther("Hiabc", "abcd") → false	false	OK	
+endOther("Hiabc", "bc") → true	true	OK	
+endOther("Hiabcx", "bc") → false	false	OK	
+endOther("abc", "abc") → true	true	OK	
+endOther("xyz", "12xyz") → true	true	OK	
+endOther("yz", "12xz") → false	false	OK	
+endOther("Z", "12xz") → true	true	OK	
+endOther("12", "12") → true	true	OK	
+endOther("abcXYZ", "abcDEF") → false	false	OK	
+endOther("ab", "ab12") → false	false	OK	
+endOther("ab", "12ab") → true	true	OK	
+other tests
+OK	
+
+All Correct
