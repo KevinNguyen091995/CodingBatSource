@@ -1,0 +1,58 @@
+We'll say that a String is xy-balanced if for all the 'x' chars in the string, there exists a 'y' char somewhere later in the string. 
+So "xxy" is balanced, but "xyx" is not. One 'y' can balance multiple 'x's. Return true if the given string is xy-balanced.
+
+
+xyBalance("aaxbby") → true
+xyBalance("aaxbb") → false
+xyBalance("yaaxbb") → false
+
+public boolean xyBalance(String str) {
+  int xCount = 0;
+  int yCount = 0;
+  int xSpot = 0;
+  int ySpot = 0;
+  
+  for(int i = 0; i < str.length(); i++){
+    if(str.charAt(i) == 'x'){
+      xCount++;
+      xSpot = i;
+    }
+    
+    if(str.charAt(i) == 'y'){
+      yCount++;
+      ySpot = i;
+    }
+  }
+  
+  if(ySpot > xSpot && yCount > 0) return true;
+  if(xCount == 0) return true;
+  return false;
+}
+
+#
+Returning str.lastIndexOf("y")>=str.lastIndexOf("x") will work as well
+#
+
+Expected	Run		
+xyBalance("aaxbby") → true	true	OK	
+xyBalance("aaxbb") → false	false	OK	
+xyBalance("yaaxbb") → false	false	OK	
+xyBalance("yaaxbby") → true	true	OK	
+xyBalance("xaxxbby") → true	true	OK	
+xyBalance("xaxxbbyx") → false	false	OK	
+xyBalance("xxbxy") → true	true	OK	
+xyBalance("xxbx") → false	false	OK	
+xyBalance("bbb") → true	true	OK	
+xyBalance("bxbb") → false	false	OK	
+xyBalance("bxyb") → true	true	OK	
+xyBalance("xy") → true	true	OK	
+xyBalance("y") → true	true	OK	
+xyBalance("x") → false	false	OK	
+xyBalance("") → true	true	OK	
+xyBalance("yxyxyxyx") → false	false	OK	
+xyBalance("yxyxyxyxy") → true	true	OK	
+xyBalance("12xabxxydxyxyzz") → true	true	OK	
+other tests
+OK	
+
+All Correct
