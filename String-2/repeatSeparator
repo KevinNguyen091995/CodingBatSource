@@ -1,0 +1,38 @@
+Given two strings, word and a separator sep, return a big string made of count occurrences of the word, separated by the separator string.
+
+
+repeatSeparator("Word", "X", 3) → "WordXWordXWord"
+repeatSeparator("This", "And", 2) → "ThisAndThis"
+repeatSeparator("This", "And", 1) → "This"
+
+public String repeatSeparator(String word, String sep, int count) {
+  StringBuilder newStr = new StringBuilder();
+  int sCount = count-1;
+  
+  for(int i = 0; i < count; i ++){
+    newStr.append(word);
+    if(sCount != 0){
+      newStr.append(sep);
+      sCount--;
+    }
+  }
+  
+  return newStr.toString();
+}
+
+Expected	Run		
+repeatSeparator("Word", "X", 3) → "WordXWordXWord"	"WordXWordXWord"	OK	
+repeatSeparator("This", "And", 2) → "ThisAndThis"	"ThisAndThis"	OK	
+repeatSeparator("This", "And", 1) → "This"	"This"	OK	
+repeatSeparator("Hi", "-n-", 2) → "Hi-n-Hi"	"Hi-n-Hi"	OK	
+repeatSeparator("AAA", "", 1) → "AAA"	"AAA"	OK	
+repeatSeparator("AAA", "", 0) → ""	""	OK	
+repeatSeparator("A", "B", 5) → "ABABABABA"	"ABABABABA"	OK	
+repeatSeparator("abc", "XX", 3) → "abcXXabcXXabc"	"abcXXabcXXabc"	OK	
+repeatSeparator("abc", "XX", 2) → "abcXXabc"	"abcXXabc"	OK	
+repeatSeparator("abc", "XX", 1) → "abc"	"abc"	OK	
+repeatSeparator("XYZ", "a", 2) → "XYZaXYZ"	"XYZaXYZ"	OK	
+other tests
+OK	
+
+All Correct
