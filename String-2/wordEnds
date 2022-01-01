@@ -1,0 +1,42 @@
+Given a string and a non-empty word string, return a string made of each char just before and just after every appearance of the word in the string. 
+Ignore cases where there is no char before or after the word, and a char may be included twice if it is between two words.
+
+
+wordEnds("abcXY123XYijk", "XY") → "c13i"
+wordEnds("XY123XY", "XY") → "13"
+wordEnds("XY1XY", "XY") → "11"
+
+public String wordEnds(String str, String word) {
+  
+  StringBuilder newStr = new StringBuilder();
+  
+  for(int i = 0; i < str.length()-word.length()+1; i++){
+    if(i > 0 && str.substring(i,i+word.length()).equals(word))
+      newStr.append(str.charAt(i-1));
+      
+    if(i < str.length()-word.length() && str.substring(i,i+word.length()).equals(word))
+      newStr.append(str.charAt(i+word.length()));
+  }
+  
+  
+  return newStr.toString();
+}
+
+Expected	Run		
+wordEnds("abcXY123XYijk", "XY") → "c13i"	"c13i"	OK	
+wordEnds("XY123XY", "XY") → "13"	"13"	OK	
+wordEnds("XY1XY", "XY") → "11"	"11"	OK	
+wordEnds("XYXY", "XY") → "XY"	"XY"	OK	
+wordEnds("XY", "XY") → ""	""	OK	
+wordEnds("Hi", "XY") → ""	""	OK	
+wordEnds("", "XY") → ""	""	OK	
+wordEnds("abc1xyz1i1j", "1") → "cxziij"	"cxziij"	OK	
+wordEnds("abc1xyz1", "1") → "cxz"	"cxz"	OK	
+wordEnds("abc1xyz11", "1") → "cxz11"	"cxz11"	OK	
+wordEnds("abc1xyz1abc", "abc") → "11"	"11"	OK	
+wordEnds("abc1xyz1abc", "b") → "acac"	"acac"	OK	
+wordEnds("abc1abc1abc", "abc") → "1111"	"1111"	OK	
+other tests
+OK	
+
+All Correct
