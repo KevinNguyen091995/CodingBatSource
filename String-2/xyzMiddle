@@ -1,0 +1,44 @@
+
+Given a string, does "xyz" appear in the middle of the string? To define middle, we'll say that the number of chars to the left and right of the "xyz" must differ by at most one. 
+This problem is harder than it looks.
+
+
+xyzMiddle("AAxyzBB") → true
+xyzMiddle("AxyzBB") → true
+xyzMiddle("AxyzBBB") → false
+
+public boolean xyzMiddle(String str) {
+  int mid = (str.length()/2);
+  
+  if(str.length() > 2 && str.substring(mid-1,mid+2).equals("xyz")) return true;
+  if(str.length() > 2 && str.length() % 2 == 0 && str.substring(mid-2,mid+1).equals("xyz")) return true;
+  
+  return false;
+}
+
+Expected	Run		
+xyzMiddle("AAxyzBB") → true	true	OK	
+xyzMiddle("AxyzBB") → true	true	OK	
+xyzMiddle("AxyzBBB") → false	false	OK	
+xyzMiddle("AxyzBBBB") → false	false	OK	
+xyzMiddle("AAAxyzB") → false	false	OK	
+xyzMiddle("AAAxyzBB") → true	true	OK	
+xyzMiddle("AAAAxyzBB") → false	false	OK	
+xyzMiddle("AAAAAxyzBBB") → false	false	OK	
+xyzMiddle("1x345xyz12x4") → true	true	OK	
+xyzMiddle("xyzAxyzBBB") → true	true	OK	
+xyzMiddle("xyzAxyzBxyz") → true	true	OK	
+xyzMiddle("xyzxyzAxyzBxyzxyz") → true	true	OK	
+xyzMiddle("xyzxyzxyzBxyzxyz") → true	true	OK	
+xyzMiddle("xyzxyzAxyzxyzxyz") → true	true	OK	
+xyzMiddle("xyzxyzAxyzxyzxy") → false	false	OK	
+xyzMiddle("AxyzxyzBB") → false	false	OK	
+xyzMiddle("") → false	false	OK	
+xyzMiddle("x") → false	false	OK	
+xyzMiddle("xy") → false	false	OK	
+xyzMiddle("xyz") → true	true	OK	
+xyzMiddle("xyzz") → true	true	OK	
+other tests
+OK	
+
+All Correct
