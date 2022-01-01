@@ -1,0 +1,43 @@
+Return a version of the given string, where for every star (*) in the string the star and the chars immediately to its left and right are gone. So "ab*cd" yields "ad" and "ab**cd" also yields "ad".
+
+
+starOut("ab*cd") → "ad"
+starOut("ab**cd") → "ad"
+starOut("sm*eilly") → "silly"
+
+public String starOut(String cArr) {
+  StringBuilder newStr = new StringBuilder();
+  
+  for(int i = 0; i < cArr.length(); i++){
+    if(cArr.charAt(i) != '*'){
+      if((i > 0 && cArr.charAt(i-1) == '*') || (i < cArr.length()-1 && cArr.charAt(i+1) == '*'));
+      else newStr.append(cArr.charAt(i));
+    }
+  }
+  
+  return newStr.toString();
+}
+
+Expected	Run		
+starOut("ab*cd") → "ad"	"ad"	OK	
+starOut("ab**cd") → "ad"	"ad"	OK	
+starOut("sm*eilly") → "silly"	"silly"	OK	
+starOut("sm*eil*ly") → "siy"	"siy"	OK	
+starOut("sm**eil*ly") → "siy"	"siy"	OK	
+starOut("sm***eil*ly") → "siy"	"siy"	OK	
+starOut("stringy*") → "string"	"string"	OK	
+starOut("*stringy") → "tringy"	"tringy"	OK	
+starOut("*str*in*gy") → "ty"	"ty"	OK	
+starOut("abc") → "abc"	"abc"	OK	
+starOut("a*bc") → "c"	"c"	OK	
+starOut("ab") → "ab"	"ab"	OK	
+starOut("a*b") → ""	""	OK	
+starOut("a") → "a"	"a"	OK	
+starOut("a*") → ""	""	OK	
+starOut("*a") → ""	""	OK	
+starOut("*") → ""	""	OK	
+starOut("") → ""	""	OK	
+other tests
+OK	
+
+All Correct
