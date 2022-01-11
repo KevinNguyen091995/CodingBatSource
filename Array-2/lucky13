@@ -1,0 +1,37 @@
+Given an array of ints, return true if the array contains no 1's and no 3's.
+
+
+lucky13([0, 2, 4]) → true
+lucky13([1, 2, 3]) → false
+lucky13([1, 2, 4]) → false
+
+public boolean lucky13(int[] nums) {
+  boolean check = false;
+  
+  if(nums.length < 1) return true;
+  
+  for(int i = 0; i < nums.length; i++){
+    if(nums[i] != 3 && nums[i] != 1) check = true;
+    else return false;
+  }
+  
+  return check;
+}
+
+Expected	Run		
+lucky13([0, 2, 4]) → true	true	OK	
+lucky13([1, 2, 3]) → false	false	OK	
+lucky13([1, 2, 4]) → false	false	OK	
+lucky13([2, 7, 2, 8]) → true	true	OK	
+lucky13([2, 7, 1, 8]) → false	false	OK	
+lucky13([3, 7, 2, 8]) → false	false	OK	
+lucky13([2, 7, 2, 1]) → false	false	OK	
+lucky13([1, 2]) → false	false	OK	
+lucky13([2, 2]) → true	true	OK	
+lucky13([2]) → true	true	OK	
+lucky13([3]) → false	false	OK	
+lucky13([]) → true	true	OK	
+other tests
+OK	
+
+All Correct
