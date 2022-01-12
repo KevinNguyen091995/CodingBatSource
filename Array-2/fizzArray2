@@ -1,0 +1,29 @@
+Given a number n, create and return a new string array of length n, containing the strings "0", "1" "2" .. through n-1.
+
+fizzArray2(4) → ["0", "1", "2", "3"]
+fizzArray2(10) → ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+fizzArray2(2) → ["0", "1"]
+
+public String[] fizzArray2(int n) {
+  String[] newArray = new String[n];
+  
+  for(int i = 0; i < n; i++){
+    newArray[i] = i + "";
+  }
+  
+  return newArray;
+}
+
+Expected	Run		
+fizzArray2(4) → ["0", "1", "2", "3"]	["0", "1", "2", "3"]	OK	
+fizzArray2(10) → ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]	["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]	OK	
+fizzArray2(2) → ["0", "1"]	["0", "1"]	OK	
+fizzArray2(1) → ["0"]	["0"]	OK	
+fizzArray2(0) → []	[]	OK	
+fizzArray2(7) → ["0", "1", "2", "3", "4", "5", "6"]	["0", "1", "2", "3", "4", "5", "6"]	OK	
+fizzArray2(9) → ["0", "1", "2", "3", "4", "5", "6", "7", "8"]	["0", "1", "2", "3", "4", "5", "6", "7", "8"]	OK	
+fizzArray2(11) → ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]	["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]	OK	
+other tests
+OK	
+
+All Correct
