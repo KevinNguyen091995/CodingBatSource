@@ -1,0 +1,28 @@
+Given a number n, create and return a new int array of length n, containing the numbers 0, 1, 2, ... n-1. 
+The given n may be 0, in which case just return a length 0 array.
+
+fizzArray(4) → [0, 1, 2, 3]
+fizzArray(1) → [0]
+fizzArray(10) → [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+public int[] fizzArray(int n) {
+  int[] newArray = new int[n];
+  
+  for(int i = 0; i < n; i++){
+    newArray[i] = i;
+  }
+  
+  return newArray;
+}
+
+Expected	Run		
+fizzArray(4) → [0, 1, 2, 3]	[0, 1, 2, 3]	OK	
+fizzArray(1) → [0]	[0]	OK	
+fizzArray(10) → [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]	[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]	OK	
+fizzArray(0) → []	[]	OK	
+fizzArray(2) → [0, 1]	[0, 1]	OK	
+fizzArray(7) → [0, 1, 2, 3, 4, 5, 6]	[0, 1, 2, 3, 4, 5, 6]	OK	
+other tests
+OK	
+
+All Correct
