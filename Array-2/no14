@@ -1,0 +1,43 @@
+Given an array of ints, return true if it contains no 1's or it contains no 4's.
+
+
+no14([1, 2, 3]) → true
+no14([1, 2, 3, 4]) → false
+no14([2, 3, 4]) → true
+
+public boolean no14(int[] nums) {
+  boolean check1 = true;
+  boolean check4 = true;
+  
+  for(int i = 0; i < nums.length; i++){
+    if(nums[i] == 4) check4 = false;
+    if(nums[i] == 1) check1 = false;
+  }
+  
+  return (check4 || check1);
+}
+
+Expected	Run		
+no14([1, 2, 3]) → true	true	OK	
+no14([1, 2, 3, 4]) → false	false	OK	
+no14([2, 3, 4]) → true	true	OK	
+no14([1, 1, 4, 4]) → false	false	OK	
+no14([2, 2, 4, 4]) → true	true	OK	
+no14([2, 3, 4, 1]) → false	false	OK	
+no14([2, 1, 1]) → true	true	OK	
+no14([1, 4]) → false	false	OK	
+no14([2]) → true	true	OK	
+no14([2, 1]) → true	true	OK	
+no14([1]) → true	true	OK	
+no14([4]) → true	true	OK	
+no14([]) → true	true	OK	
+no14([1, 1, 1, 1]) → true	true	OK	
+no14([9, 4, 4, 1]) → false	false	OK	
+no14([4, 2, 3, 1]) → false	false	OK	
+no14([4, 2, 3, 5]) → true	true	OK	
+no14([4, 4, 2]) → true	true	OK	
+no14([1, 4, 4]) → false	false	OK	
+other tests
+OK	
+
+All Correct
